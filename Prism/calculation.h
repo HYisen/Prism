@@ -8,18 +8,25 @@
 struct Slice
 {
 public:
-	Slice(double refractiveIndex, double width) :n(refractiveIndex), d(width) {}
+	Slice(double refractiveIndex, double width, double angle = 0) :n(refractiveIndex), d(width), i(angle), dy(0) {}
 
 	double n;//refractive index
 	double d;//width
 	double i;//angle
 
 	double dy;//change in y axis when light pass through
+
+	std::string toString();
 };
 
 class Chunk
 {
 public:
+	void cal(std::shared_ptr<Slice> previous, std::shared_ptr<Slice> present)
+	{
+		calculate(previous, present);
+	}
+	/* using for debug test only, should be removed later. */
 	
 private:
 	std::string info;
