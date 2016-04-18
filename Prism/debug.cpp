@@ -3,7 +3,8 @@
 
 void debug()
 {
-	debugSlice();
+	//debugSlice();
+	debugChunk();
 }
 
 void debugSlice()
@@ -22,4 +23,22 @@ void debugSlice()
 
 	cout << one->toString() << endl;
 	cout << two->toString() << endl;
+}
+
+void debugChunk()
+{
+	using std::cout;
+	using std::endl;
+
+	auto one = std::make_shared<Chunk>(10, 1000, debugfunc);
+	cout << "initialized" << endl;
+
+	one->execute();
+	cout << "executed" << endl;
+	one->print();
+}
+
+double debugfunc(double x)
+{
+	return 1+x/100;
 }

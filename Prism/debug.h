@@ -7,3 +7,7 @@
 void debug();
 
 void debugSlice();
+
+void debugChunk();
+
+double debugfunc(double x);
