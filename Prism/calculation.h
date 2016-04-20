@@ -24,10 +24,12 @@ class Chunk
 {
 public:
 	Chunk(double length, int slice, double n(double x), std::string information = "None");
-	Chunk() = delete;
+	Chunk() = default;
 
 	void execute();
+	void report();
 	void print(std::ostream  &os = std::cout);
+	void tube(std::ostream  &os = std::cout);
 	void setEnvironment(double n = 1, double d = 50);
 	void setIncidentAngle(double angle = 3.1415926 / 6.0);
 	

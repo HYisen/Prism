@@ -234,3 +234,18 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/Prism/graph.h
+/Prism/targetver.h
+/Prism/stdafx.cpp
+/Prism/resource.h
+/Prism/ReadMe.txt
+/Prism/Prism.vcxproj.filters
+/Prism/Prism.vcxproj
+/Prism/Prism.VC.db
+/Prism/Prism.sln
+/Prism/Prism.rc
+/Prism/00.csv
+/Prism/0.csv
+/Prism/0 - 副本.csv
+/Prism/Prism/Prism.vcxproj.filters
+/Prism/Prism/Prism.vcxproj

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "calculation.h"
 
 #include <math.h>
@@ -36,17 +36,41 @@ void Chunk::execute()
 	}
 }
 
+void Chunk::report()
+{
+	double y=0;
+	for (auto one : data)
+	{
+		y += one->dy;
+	}
+	std::cout << "y=" << y << " i=" << out->i << std::endl;
+}
+
 void Chunk::print(std::ostream & os)
 {
 	using std::endl;
-	os << "id,n,d,i,dy" << endl;
+	os << "id,n,d,i,dy,y" << endl;
 	os << "in," << in->toString() << endl;
 	int k(0);
+	double y(0);
 	for (auto one : data)
 	{
-		os << ++k << "," << one->toString() << endl;
+		y += one->dy;
+		os << ++k << "," << one->toString() << "," << y << endl;
 	}
 	os << "out," << out->toString() << endl;;
+}
+
+void Chunk::tube(std::ostream & os)
+{
+	using std::endl;
+	int k(0);
+	double y(0);
+	for (auto one : data)
+	{
+		y += one->dy;
+		os << static_cast<int>(1e4*one->n) << "," << static_cast<int>(1e7*y) << endl;
+	}
 }
 
 void Chunk::setEnvironment(double n, double d)
